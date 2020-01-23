@@ -4,7 +4,10 @@
 
 
 const http = require("http");
-var path = require("path");
+const path = require("path");
+const express = require("express");
+const app = express();
+
 
 const PORT = 8080;
 
@@ -31,3 +34,20 @@ function handleRequest(res, req) {
     return display404(path, res);
   }
 }
+
+// Routes
+
+app.get("*", function(req, res) {
+  res.send("Welcome to the Star Wars Page!");
+});
+
+app.get("/yoda", function(req, res) {
+  res.json(yoda);
+});
+
+app.get("/darthmaul", function(req, res) {
+  res.json(darthmaul);
+});
+app.get("/JarJarBinks", function(req, res){
+  res.json(JarJarBinks);
+})
