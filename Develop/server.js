@@ -16,7 +16,7 @@ app.use(express.json());
 //http.createServer, somehow the handleRequest argument is passed, but defined later
 
 const writeNote = [];
-const deleteNote = [];
+
 // Routes
 
 app.get("/", function(req, res) {
@@ -27,6 +27,15 @@ app.get("/notes", function(req, res) {
   res.sendFile(path.join(__dirname, "public/notes.html"))
 });
 
+app.post("api/notes", function(res, res) {
+  writeNote.push(req.body);
+  res.json(true);
+});
+
+app.post("/api/clear", function(req, res){
+writeNote.length = 0;
+res.json({ok:true});
+});
 
 
 app.listen(PORT, function() {
