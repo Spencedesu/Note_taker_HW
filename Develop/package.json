@@ -1,15 +1,24 @@
 {
-  "name": "note-taker",
+  "name": "note_taker_hw",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "HTML_routes.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Spencedesu/Note_taker_HW.git"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.4",
-    "mysql": "^2.16.0"
-  }
+  "bugs": {
+    "url": "https://github.com/Spencedesu/Note_taker_HW/issues"
+  },
+  "homepage": "https://github.com/Spencedesu/Note_taker_HW#readme"
 }

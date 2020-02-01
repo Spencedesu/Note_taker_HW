@@ -1,21 +1,15 @@
-// you gotta include the "npm install express"
-// in order to have a running app
-// regardless is thers now json file 
-
+//Includes the dependencies, required files or modules, not sure if it makes a difference.
 const fs = require("fs");
-const path = require("path");
 const express = require("express");
 
-
+// Node will be expecting an express server
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//http.createServer, somehow the handleRequest argument is passed, but defined later
-
-const writeNote = [];
+// An empty array for writing notes
 
 // Routes
 
