@@ -1,8 +1,8 @@
 
 
 const noteArray = [{
-  title: "This is not a drill!",
-  text: "I'll take all of you on"
+  title: "",
+  text: ""
 }];
 
 module.exports = noteArray;

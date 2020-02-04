@@ -1,6 +1,12 @@
 //Includes the dependencies, required files or modules, not sure if it makes a difference.
 const fs = require("fs");
+const path = require("path");
 const express = require("express");
+
+// Local file
+const notejs = require("./db/notes");
+const htmlRoutes = require("./routes/HTML_routes");
+
 
 // Node will be expecting an express server
 const app = express();
@@ -9,27 +15,22 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// An empty array for writing notes
 
-// Routes
+//routes
+require("./routes/HTML_routes")(app);
+require("./routes/Routes")(app);
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "public/index.html"));
-});
+// app.get("/", function(req, res) {
+//   res.sendFile(path.join(__dirname, "./public/index.html"));
+// });
 
-app.get("/notes", function(req, res) {
-  res.sendFile(path.join(__dirname, "public/notes.html"))
-});
+// app.get("/notes", function(req, res) {
+//   res.sendFile(path.join(__dirname, "./public/notes.html"));
+// });
 
-app.post("api/notes", function(res, res) {
-  writeNote.push(req.body);
-  res.json(true);
-});
-
-app.post("/api/clear", function(req, res){
-writeNote.length = 0;
-res.json({ok:true});
-});
+// app.get("*", function(req,res) {
+//   res.sendFile(path.join(__dirname, "./public/index.html"));
+// });
 
 
 app.listen(PORT, function() {
