@@ -1,4 +1,5 @@
 var path = require("path");
+var fs = require("fs");
 
 // Routing
 
@@ -9,12 +10,16 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   app.get("/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/notes.html"));
   });
+  
+  app.get("/api/notes", function(req, res) {
+    res.sendFile(path.join(__dirname, "../../db.json"))
+  })
 
   app.get("*", function(req,res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));

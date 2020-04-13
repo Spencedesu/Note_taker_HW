@@ -18,20 +18,20 @@ app.use(express.json());
 
 //routes
 require("./routes/HTML_routes")(app);
-require("./routes/Routes")(app);
+require("./routes/ApiRoutes")(app);
 
-// app.get("/", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./public/index.html"));
-// });
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "./public/index.html"));
+});
 
-// app.get("/notes", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./public/notes.html"));
-// });
+app.get("/notes", function(req, res) {
+  res.sendFile(path.join(__dirname, "./public/notes.html"));
+});
 
-// app.get("*", function(req,res) {
-//   res.sendFile(path.join(__dirname, "./public/index.html"));
-// });
-
+app.get("*", function(req,res) {
+  res.sendFile(path.join(__dirname, "./public/index.html"));
+});
+// console.log("You just posted some data to the server:\n", requestData);
 
 app.listen(PORT, function() {
   // signs of successfully listening. 
