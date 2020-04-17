@@ -1,5 +1,7 @@
 * Note Taker - Homework 12
 
+https://drive.google.com/file/d/1ainv4FSC97YrBT6QI4cq9SlLfAalTCLv/preview <-- Should link to a video demo of the app.
+
 This application is a browser note storing application, that takes in user input for "title" and "text body" and saves the results to a list on the side.
 
 * Instructions 
