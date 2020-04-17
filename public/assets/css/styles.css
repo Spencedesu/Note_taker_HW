@@ -4,6 +4,10 @@ html, body {
   padding: 0;
 }
 
+body {
+  background-color: #757575;
+}
+
 .save-note {
   display: none;
 }
@@ -34,8 +38,10 @@ html, body {
   font-size: 3rem;
 }
 
-.note-title:read-only, .note-textarea:read-only {
-  color: #757575;
+.note-textarea, .note-title {
+  color: #000000;
+  width: 50%;
+  background-color: white;
 }
 
 .list-container .card {
