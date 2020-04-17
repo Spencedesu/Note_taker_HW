@@ -20,7 +20,7 @@ app.post("/api/notes", function(req, res) {
     // add the new note to the array
     newArray.push(newNote);
     fs.writeFile("./db/db.json", JSON.stringify(newArray), () => {
-      console.log("wrote new note to DataBase");
+      console.log("Success! +1 note acquired");
     });
     // send the new note back
     res.json(newNote);
